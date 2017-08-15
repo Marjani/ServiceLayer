@@ -223,8 +223,6 @@ namespace MyApp.Framework.Application.Services
             query = ApplySorting(query, request);
             query = ApplyPaging(query, request);
 
-            request.PageNumber++;
-
             var result = query.ProjectToList<TModel>(Mapper.ConfigurationProvider);
 
             return new TPagedListResponse
@@ -296,9 +294,7 @@ namespace MyApp.Framework.Application.Services
 
             query = ApplySorting(query, request);
             query = ApplyPaging(query, request);
-
-            request.PageNumber++;
-
+            
             var result = await query.ProjectToListAsync<TModel>(Mapper.ConfigurationProvider).ConfigureAwait(false);
 
             return new TPagedListResponse
