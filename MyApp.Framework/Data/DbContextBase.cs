@@ -239,7 +239,7 @@ namespace MyApp.Framework.Data
 
                 foreach (var entity in entities)
                 {
-                    MarkAsChanged(entities);
+                    MarkAsChanged(entity);
                 }
             }
             finally
