@@ -14,7 +14,7 @@ namespace MyApp.Framework.Aspects.Transaction
         }
         public IMethodInvocationResult Intercept(ISyncMethodInvocation methodInvocation)
         {
-            if (IsTransactionEnabled(methodInvocation)) return methodInvocation.InvokeNext();
+            if (!IsTransactionEnabled(methodInvocation)) return methodInvocation.InvokeNext();
 
             var transaction = _unitOfWork.BeginTransaction();
             try

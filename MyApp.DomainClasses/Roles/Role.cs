@@ -20,7 +20,6 @@ namespace MyApp.DomainClasses.Roles
         #region Properties
 
         public string Name { get; set; }
-        public string NormalizedName { get; set; }
         public string Description { get; set; }
         public bool IsActive { get; set; } = true;
         public bool IsSystemEntry { get; set; }

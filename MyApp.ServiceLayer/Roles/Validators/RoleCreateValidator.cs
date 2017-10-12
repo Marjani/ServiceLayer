@@ -7,7 +7,7 @@ namespace MyApp.ServiceLayer.Roles.Validators
     {
         public RoleCreateValidator()
         {
-            RuleFor(a => a.Name).NotNull().WithMessage("salar rabbal");
+            RuleFor(a => a.Name).NotNull();
         }
     }
 }

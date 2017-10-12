@@ -30,7 +30,7 @@ namespace MyApp.Framework
                 scan.LookForRegistries();
             });
 
-            Policies.Interceptors(new DynamicProxyInterceptorPolicy(f => typeof(IApplicationService).IsAssignableFrom(f), typeof(ValidatorInterceptor)/*, typeof(TransactionInterceptor)*/));
+            Policies.Interceptors(new DynamicProxyInterceptorPolicy(f => typeof(IApplicationService).IsAssignableFrom(f), typeof(ValidatorInterceptor), typeof(TransactionInterceptor)));
         }
     }
 }

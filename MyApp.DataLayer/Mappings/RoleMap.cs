@@ -11,11 +11,11 @@ namespace MyApp.DataLayer.Mappings
         public RoleMap()
         {
             Property(r => r.Name).IsRequired().HasMaxLength(50);
-            Property(r => r.NormalizedName)
+            Property(r => r.Name)
                 .IsRequired()
                 .HasMaxLength(50)
                 .HasColumnAnnotation("Index",
-                    new IndexAnnotation(new IndexAttribute("UIX_Role_NormalizedName") {IsUnique = true}));
+                    new IndexAnnotation(new IndexAttribute("UIX_Role_Name") {IsUnique = true}));
 
             HasMany(r => r.Claims).WithRequired().HasForeignKey(rc => rc.RoleId);
         }

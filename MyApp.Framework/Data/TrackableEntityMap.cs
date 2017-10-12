@@ -10,13 +10,13 @@ namespace MyApp.Framework.Data
     {
         protected TrackableEntityMap()
         {
-            Property(a => a.CreatorIp).HasMaxLength(255).IsRequired();
+            Property(a => a.CreatorIp).HasMaxLength(255).IsOptional();
             Property(a => a.LastModifierIp).HasMaxLength(255).IsOptional();
 
-            Property(a => a.CreationDateTime).IsRequired();
+            Property(a => a.CreationDateTime).IsOptional();
             Property(a => a.LastModificationDateTime).IsOptional();
 
-            Property(a => a.CreatorBrowserName).HasMaxLength(1024).IsRequired();
+            Property(a => a.CreatorBrowserName).HasMaxLength(1024).IsOptional();
             Property(a => a.LastModifierBrowserName).HasMaxLength(1024).IsOptional();
 
             HasOptional(a => a.CreatorUser).WithMany().HasForeignKey(a => a.CreatorUserId).WillCascadeOnDelete(false);

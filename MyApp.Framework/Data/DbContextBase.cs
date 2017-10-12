@@ -404,7 +404,7 @@ namespace MyApp.Framework.Data
             Guard.ArgumentNotNull(modelBuilder, nameof(modelBuilder));
 
             modelBuilder.AddFrameworkConventions();
-            modelBuilder.ConfigureFrameworkFilters();
+            //modelBuilder.ConfigureFrameworkFilters();
 
             modelBuilder.Ignore<Entity>();
             modelBuilder.Ignore<CreationTrackingEntity>();

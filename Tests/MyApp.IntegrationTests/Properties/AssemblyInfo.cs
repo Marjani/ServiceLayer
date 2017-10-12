@@ -5,22 +5,22 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MyApp.DataLayer")]
+[assembly: AssemblyTitle("MyApp.IntegrationTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MyApp.DataLayer")]
+[assembly: AssemblyProduct("MyApp.IntegrationTests")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly:InternalsVisibleTo("MyApp.IntegrationTests")]
+
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e673ce02-c085-4fb2-9b46-be44461d8a8e")]
+[assembly: Guid("703407dd-5436-4a36-a50b-85878b3959ca")]
 
 // Version information for an assembly consists of the following four values:
 //
