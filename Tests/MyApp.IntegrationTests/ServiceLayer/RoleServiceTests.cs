@@ -4,6 +4,7 @@ using FluentValidation;
 using MyApp.DomainClasses.Roles;
 using MyApp.Framework.Data;
 using MyApp.Framework.Infrastructure;
+using MyApp.IntegrationTests.Attributes;
 using MyApp.IntegrationTests.InitialData;
 using MyApp.Models.Admin.Roles;
 using MyApp.ServiceLayer.Roles;
@@ -13,7 +14,9 @@ using Shouldly;
 namespace MyApp.IntegrationTests.ServiceLayer
 {
     [TestFixture]
-    public class RoleServiceTests : ServiceTestsBase
+    [AutoRollback]
+    [HttpContext]
+    public class RoleServiceTests
     {
         private IRoleApplicationService _roleService;
 

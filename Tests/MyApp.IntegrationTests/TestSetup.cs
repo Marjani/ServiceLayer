@@ -29,28 +29,25 @@ namespace MyApp.IntegrationTests
 
         private static void CreateDatabase()
         {
-            ExecuteSqlCommand(Master, $"CREATE DATABASE [MyAppTest]  ON (NAME = 'MyAppTest', FILENAME = '{FileName}') COLLATE Persian_100_CI_AS;");
-            ExecuteSqlCommand(Master, "ALTER DATABASE [MyAppTest] SET ALLOW_SNAPSHOT_ISOLATION ON;" +
-                                      " ALTER DATABASE[MyAppTest] SET READ_COMMITTED_SNAPSHOT ON; ");
+            ExecuteSqlCommand(Master, string.Format(SqlResource.DatabaseScript, FileName));
+
+            //Use T-Sql Scripts For Create Database
+            //ExecuteSqlCommand(MyAppTest, SqlResources.V1_0_0);
+
             var migration =
                 new MigrateDatabaseToLatestVersion<ApplicationDbContext, DataLayer.Migrations.Configuration>();
             migration.InitializeDatabase(new ApplicationDbContext());
 
-            //ExecuteSqlCommand(MyAppTest, SqlResources.V1_0_0);
         }
 
         private static void DestroyDatabase()
         {
-            var fileNames = ExecuteSqlQuery(Master, @"
-                SELECT [physical_name] FROM [sys].[master_files]
-                WHERE [database_id] = DB_ID('MyAppTest')",
+            var fileNames = ExecuteSqlQuery(Master, SqlResource.SelecDatabaseFileNames,
                 row => (string)row["physical_name"]);
 
             if (!fileNames.Any()) return;
 
-            ExecuteSqlCommand(Master, @"
-                    ALTER DATABASE [MyAppTest] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-                    EXEC sp_detach_db 'MyAppTest' , 'true'");
+            ExecuteSqlCommand(Master, SqlResource.DetachDatabase);
 
             fileNames.ForEach(File.Delete);
         }
