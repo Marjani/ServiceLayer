@@ -65,21 +65,14 @@ namespace MyApp.IntegrationTests.ServiceLayer
         }
 
         [Test]
-        [TestCase("Admin")]
-        public void Should_Not_Create_New_Role_With_Admin_Name(string role)
+        public void Should_Not_Create_New_Role_With_Admin_Name()
         {
             var viewModel = new RoleCreateViewModel
             {
-                Name = role.ToUpperInvariant()
+                Name = "Admin"
             };
 
             Assert.Throws<DbUpdateException>(() => _roleService.Create(viewModel));
-        }
-
-        [Test]
-        public void Should_Delete_Role()
-        {
-            var viewModel = new RoleDeleteViewModel { };
         }
 
         [Test]
@@ -95,10 +88,7 @@ namespace MyApp.IntegrationTests.ServiceLayer
         [Test]
         public void Should_Not_Create_New_Role_Without_Name()
         {
-            using (new FakeHttpContext.FakeHttpContext())
-            {
-                Assert.Throws<ValidationException>(() => _roleService.Create(new RoleCreateViewModel { Name = null }));
-            }
+            Assert.Throws<ValidationException>(() => _roleService.Create(new RoleCreateViewModel { Name = null }));
         }
     }
 }
