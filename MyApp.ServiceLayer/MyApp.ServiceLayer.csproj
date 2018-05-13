@@ -88,6 +88,11 @@
     <Compile Include="Roles\Validators\RoleDeleteValidator.cs" />
     <Compile Include="Roles\Validators\RoleEditValidator.cs" />
     <Compile Include="ServiceLayerRegistry.cs" />
+    <Compile Include="Users\IUserApplicationService.cs" />
+    <Compile Include="Users\UserApplicationService.cs" />
+    <Compile Include="Users\Validators\UserCreateValidator.cs" />
+    <Compile Include="Users\Validators\UserDeleteValidator.cs" />
+    <Compile Include="Users\Validators\UserEditValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyApp.DataLayer\MyApp.DataLayer.csproj">

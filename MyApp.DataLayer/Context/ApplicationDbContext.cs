@@ -22,7 +22,14 @@ namespace MyApp.DataLayer.Context
         #region Properties
 
         public DbSet<User> Users { get; set; }
+        public DbSet<UserLogin> UserLogins { get; set; }
+        public DbSet<UserClaim> UserClaims { get; set; }
+        public DbSet<UserToken> UserTokens { get; set; }
+        public DbSet<UserUsedPassword> UserUsedPasswords { get; set; }
+
+
         public DbSet<Role> Roles { get; set; }
+        public DbSet<RoleClaim> RoleClaims { get; set; }
 
         #endregion
     }

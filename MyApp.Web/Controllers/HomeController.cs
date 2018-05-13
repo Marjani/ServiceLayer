@@ -14,7 +14,8 @@ namespace MyApp.Web.Controllers
         public ActionResult Index()
         {
             //for test
-            IoC.Resolve<IRoleApplicationService>().Create(new List<RoleCreateViewModel> {new RoleCreateViewModel()});
+            var a = IoC.Resolve<IRoleApplicationService>();
+            var b = a.GetList();
 
             return View();
         }

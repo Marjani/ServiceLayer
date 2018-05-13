@@ -40,6 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Claim\ClaimViewModel.cs" />
+    <Compile Include="Admin\Users\UserCreateViewModel.cs" />
+    <Compile Include="Admin\Users\UserDeleteViewModel.cs" />
+    <Compile Include="Admin\Users\UserEditViewModel.cs" />
+    <Compile Include="Admin\Users\UserListViewModel.cs" />
+    <Compile Include="Admin\Users\UserPagedListRequest.cs" />
+    <Compile Include="Admin\Users\UserViewModel.cs" />
     <Compile Include="Admin\Roles\RoleCreateViewModel.cs" />
     <Compile Include="Admin\Roles\RoleDeleteViewModel.cs" />
     <Compile Include="Admin\Roles\RoleListViewModel.cs" />
