@@ -81,13 +81,14 @@
     <Compile Include="Common\ISettingApplicationService.cs" />
     <Compile Include="Common\LookupApplicationService.cs" />
     <Compile Include="Common\SettingApplicationService.cs" />
+    <Compile Include="ExternalLogins\ExternalLoginRepository.cs" />
+    <Compile Include="ExternalLogins\IExternalLoginRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Roles\IRoleApplicationService.cs" />
-    <Compile Include="Roles\RoleApplicationService.cs" />
-    <Compile Include="Roles\Validators\RoleCreateValidator.cs" />
-    <Compile Include="Roles\Validators\RoleDeleteValidator.cs" />
-    <Compile Include="Roles\Validators\RoleEditValidator.cs" />
+    <Compile Include="Roles\IRoleRepository.cs" />
+    <Compile Include="Roles\RoleRepository.cs" />
     <Compile Include="ServiceLayerRegistry.cs" />
+    <Compile Include="Users\IUserRepository.cs" />
+    <Compile Include="Users\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyApp.DataLayer\MyApp.DataLayer.csproj">

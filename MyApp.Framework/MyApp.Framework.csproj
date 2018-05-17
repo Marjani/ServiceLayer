@@ -169,6 +169,8 @@
     <Compile Include="Application\Services\IApplicationService.cs" />
     <Compile Include="Application\Services\ICrudApplicationService.cs" />
     <Compile Include="Application\Services\ICurrentUserService.cs" />
+    <Compile Include="Application\Services\IdentityRepository.cs" />
+    <Compile Include="Application\Services\IIdentityRepository.cs" />
     <Compile Include="Aspects\Transaction\TransactionalAttribute.cs" />
     <Compile Include="Aspects\Transaction\TransactionInterceptor.cs" />
     <Compile Include="Aspects\Validation\DisableValidationAttribute.cs" />
